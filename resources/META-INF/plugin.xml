@@ -16,12 +16,15 @@
   </change-notes>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="201.0"/>
+  <idea-version since-build="242" until-build="242.*"/>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
-  <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.modules.clion</depends>
+  <dependencies>
+    <plugin id="com.intellij.modules.platform"/>
+    <plugin id="com.intellij.modules.clion"/>
+    <module name="intellij.platform.dap"/>
+  </dependencies>
 
   <extensions defaultExtensionNs="com.intellij">
     <configurationType implementation="com.jetbrains.clion.bugeater.debugger.BugEaterConfigurationType"/>
